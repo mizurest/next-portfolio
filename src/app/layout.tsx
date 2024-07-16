@@ -6,6 +6,21 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 const myFont = localFont({ src: '../fonts/LINESeedJP_OTF_Eb.woff2' })
 
+const lineSeedJP = localFont({
+  src: [
+    {
+      path: '../fonts/LINESeedJP_OTF_Th.woff2',
+      weight: '100',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/LINESeedJP_OTF_Eb.woff2',
+      weight: '900',
+      style: 'normal',
+    },
+  ],
+})
+
 export const metadata: Metadata = {
   title: "Kosuke Koizumi",
   description: "ポートフォリオサイト",
@@ -18,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className="scroll-smooth">
-      <body className={myFont.className}>{children}</body>
+      <body className={lineSeedJP.className}>{children}</body>
     </html>
   );
 }

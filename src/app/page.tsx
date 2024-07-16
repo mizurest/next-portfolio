@@ -1,11 +1,13 @@
 import Image from "next/image";
 
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <main>
       <Header />
+      
       <div className="relative flex items-center h-screen">
         <h1 className="mx-8 text-5xl z-10 transition-all lg:mx-40 lg:text-6xl ">
           Hi 👋
@@ -20,6 +22,8 @@ export default function Home() {
       <div className="h-96">
         Profile
       </div>
+
+      <Footer />
     </main>
   );
 }
