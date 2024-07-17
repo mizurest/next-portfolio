@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CircleAvatar from "@/components/CircleAvatar";
 import ScrollDown from "@/components/ScrollDown";
 import WorkCard from "@/components/WorkCard";
+import GithubIcon from "../../public/icon/github.svg"
 
 export default function Home() {
   return (
@@ -30,18 +31,25 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5 transition-all">
             <WorkCard title="らびにん / 雨宮みやびcover 【歌ってみた】" tags="Movie" />
-
           </div>
         </div>
 
         <div className="py-32 max-w-3xl mx-auto">
-          <div className="flex flex-col gap-5 items-center bg-white/[.05] p-9 lg:p-16 rounded-3xl lg:flex-row m-6 lg:m-0">
+          <div className="flex flex-col gap-5 items-center bg-white/[.05] p-9 md:p-16 rounded-3xl md:flex-row m-6 md:m-0">
             <CircleAvatar width={80} height={80} />
-            <div className="flex flex-col gap-2">
-              <div className="text-center opacity-90 lg:text-start">Kosuke Koizumi</div>
-              <p className="text-xs lg:text-sm opacity-65 font-bold">
-                FigmaとReactが好きな大学生（休学中）。乗換案内のジョルダン株式会社でUIデザイナー兼コーダーとしてインターン中。主に乗換案内ではなく、鉄道会社や自治体関連の案件に関わることが多い。傍らクラウドワークにも挑戦中。
-              </p>
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
+                <div className="text-center opacity-90 md:text-start">Kosuke Koizumi</div>
+                <p className="text-xs lg:text-sm opacity-65 font-bold">
+                  FigmaとReactが好きな大学生（休学中）。乗換案内のジョルダン株式会社でUIデザイナー兼コーダーとしてインターン中。主に乗換案内ではなく、鉄道会社や自治体関連の案件に関わることが多い。傍らクラウドワークにも挑戦中。
+                </p>
+              </div>
+              <div className="flex justify-center md:justify-start">
+                <a className="flex items-center gap-1.5" href="https://github.com/mizurest">
+                  <GithubIcon />
+                  <span className="text-xs">Github</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
