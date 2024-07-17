@@ -5,8 +5,15 @@ import Footer from "@/components/Footer";
 import CircleAvatar from "@/components/CircleAvatar";
 import ScrollDown from "@/components/ScrollDown";
 import WorkCard from "@/components/WorkCard";
+import GithubIcon from "../../public/icon/github.svg";
+import { getBlogList } from "@/libs/api";
+import { use } from "react";
+
 
 export default function Home() {
+  const { contents } = use(getBlogList());
+  console.log(contents)
+
   return (
     <main className="">
       <Header />
@@ -15,9 +22,9 @@ export default function Home() {
         <h1 className="mx-8 text-5xl z-10 transition-all opacity-90 lg:mx-40 lg:text-6xl ">
           Hi 👋
           <br />
-          I'm a UI designer in Japan.
+          I&apos;m a UI designer in Japan.
         </h1>
-        <p className="absolute right-4 bottom-4 font-thin text-xxs lg:text-xs opacity-35">Photo 2024.06.08 @Tokyo Bay</p>
+        <p className="absolute right-4 bottom-4 font-thin text-xxs lg:text-xs opacity-35">2024.06.08 @Tokyo Bay</p>
         <ScrollDown />
         <Image src="/intro.png" fill alt="東京湾の写真" className="object-cover" />
       </section>
@@ -29,19 +36,26 @@ export default function Home() {
             <button className="text-sm font-bold text-sky-900">View All</button>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5 transition-all">
-            <WorkCard title="らびにん / 雨宮みやびcover 【歌ってみた】" tags="Movie" />
-
+            <WorkCard title={contents[0].title} tags={contents[0].tag} imageUrl={contents[0].eyecatch.url} />
           </div>
         </div>
 
         <div className="py-32 max-w-3xl mx-auto">
-          <div className="flex flex-col gap-5 items-center bg-white/[.05] p-9 lg:p-16 rounded-3xl lg:flex-row m-6 lg:m-0">
+          <div className="flex flex-col gap-5 items-center bg-white/[.05] p-9 md:p-16 rounded-3xl md:flex-row m-6 md:m-0">
             <CircleAvatar width={80} height={80} />
-            <div className="flex flex-col gap-2">
-              <div className="text-center opacity-90 lg:text-start">Kosuke Koizumi</div>
-              <p className="text-xs lg:text-sm opacity-65 font-bold">
-                FigmaとReactが好きな大学生（休学中）。乗換案内のジョルダン株式会社でUIデザイナー兼コーダーとしてインターン中。主に乗換案内ではなく、鉄道会社や自治体関連の案件に関わることが多い。傍らクラウドワークにも挑戦中。
-              </p>
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
+                <div className="text-center opacity-90 md:text-start">Kosuke Koizumi</div>
+                <p className="text-xs lg:text-sm opacity-65 font-bold">
+                  FigmaとReactが好きな大学生（休学中）。乗換案内のジョルダン株式会社でUIデザイナー兼コーダーとしてインターン中。主に乗換案内ではなく、鉄道会社や自治体関連の案件に関わることが多い。傍らクラウドワークにも挑戦中。
+                </p>
+              </div>
+              <div className="flex justify-center md:justify-start">
+                <a className="flex items-center gap-1.5" href="https://github.com/mizurest">
+                  <GithubIcon />
+                  <span className="text-xs">Github</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
