@@ -1,23 +1,12 @@
-"use client";
-
 import Image from "next/image";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CircleAvatar from "@/components/CircleAvatar";
-import Lottie from "react-lottie";
-import scrollAnimation from "./../../public/scroll-animation.json";
+import ScrollDown from "@/components/ScrollDown";
+import WorkCard from "@/components/WorkCard";
 
 export default function Home() {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: scrollAnimation,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
   return (
     <main className="">
       <Header />
@@ -29,20 +18,22 @@ export default function Home() {
           I'm a UI designer in Japan.
         </h1>
         <p className="absolute right-4 bottom-4 font-thin text-xxs lg:text-xs opacity-35">Photo 2024.06.08 @Tokyo Bay</p>
-        <div className="absolute z-10 bottom-10 lg:bottom-6 inset-x-0 flex flex-col gap-2.5 items-center opacity-60">
-          <Lottie options={defaultOptions} height={64} width={64} />
-          <span className="font-thin text-sm">Scroll down</span>
-          
-        </div>
-
+        <ScrollDown />
         <Image src="/intro.png" fill alt="東京湾の写真" className="object-cover" />
       </section>
 
-      <section className="">
-        <div className="max-w-5xl flex justify-between items-baseline py-32 mx-6 lg:mx-auto">
-          <h3 className="opacity-90">Recent Works</h3>
-          <button className="text-sm font-bold text-sky-900">View All</button>
+      <section>
+        <div className="max-w-5xl  mx-6 lg:mx-auto py-32">
+          <div className=" flex justify-between items-baseline">
+            <h3 className="text-lg opacity-90">Recent Works</h3>
+            <button className="text-sm font-bold text-sky-900">View All</button>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5 transition-all">
+            <WorkCard title="らびにん / 雨宮みやびcover 【歌ってみた】" tags="Movie" />
+
+          </div>
         </div>
+
         <div className="py-32 max-w-3xl mx-auto">
           <div className="flex flex-col gap-5 items-center bg-white/[.05] p-9 lg:p-16 rounded-3xl lg:flex-row m-6 lg:m-0">
             <CircleAvatar width={80} height={80} />

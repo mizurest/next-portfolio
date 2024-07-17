@@ -1,6 +1,6 @@
-import CircleAvatar from "./CircleAvatar";
-
 import Link from "next/link";
+
+import CircleAvatar from "./CircleAvatar";
 
 const Header = () => {
   return (
