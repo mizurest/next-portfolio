@@ -5,9 +5,15 @@ import Footer from "@/components/Footer";
 import CircleAvatar from "@/components/CircleAvatar";
 import ScrollDown from "@/components/ScrollDown";
 import WorkCard from "@/components/WorkCard";
-import GithubIcon from "../../public/icon/github.svg"
+import GithubIcon from "../../public/icon/github.svg";
+import { getBlogList } from "@/libs/api";
+import { use } from "react";
+
 
 export default function Home() {
+  const { contents } = use(getBlogList());
+  console.log(contents)
+
   return (
     <main className="">
       <Header />
@@ -16,9 +22,9 @@ export default function Home() {
         <h1 className="mx-8 text-5xl z-10 transition-all opacity-90 lg:mx-40 lg:text-6xl ">
           Hi 👋
           <br />
-          I'm a UI designer in Japan.
+          I&apos;m a UI designer in Japan.
         </h1>
-        <p className="absolute right-4 bottom-4 font-thin text-xxs lg:text-xs opacity-35">Photo 2024.06.08 @Tokyo Bay</p>
+        <p className="absolute right-4 bottom-4 font-thin text-xxs lg:text-xs opacity-35">2024.06.08 @Tokyo Bay</p>
         <ScrollDown />
         <Image src="/intro.png" fill alt="東京湾の写真" className="object-cover" />
       </section>
@@ -30,7 +36,7 @@ export default function Home() {
             <button className="text-sm font-bold text-sky-900">View All</button>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5 transition-all">
-            <WorkCard title="らびにん / 雨宮みやびcover 【歌ってみた】" tags="Movie" />
+            <WorkCard title={contents[0].title} tags={contents[0].tag} imageUrl={contents[0].eyecatch.url} />
           </div>
         </div>
 
