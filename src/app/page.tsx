@@ -26,7 +26,7 @@ export default function Home() {
         </h1>
         <p className="absolute right-4 bottom-4 font-thin text-xxs lg:text-xs opacity-35">2024.06.08 @Tokyo Bay</p>
         <ScrollDown />
-        <Image src="/intro.png" fill alt="東京湾の写真" className="object-cover" />
+        <Image src="/intro.webp" fill alt="東京湾の写真" className="object-cover" />
       </section>
 
       <section>
