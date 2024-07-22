@@ -13,7 +13,7 @@ const ProfileCard = () => {
           </p>
         </div>
         <div className="flex justify-center md:justify-start">
-          <a className="flex items-center gap-1.5" href="https://github.com/mizurest">
+          <a className="flex items-center gap-1.5 hover:opacity-75" href="https://github.com/mizurest">
             <GithubIcon />
             <span className="text-xs">Github</span>
           </a>
