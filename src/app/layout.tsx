@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className="scroll-smooth">
       <body className={lineSeedJP.className}>{children}</body>
-      <GoogleAnalytics gaId={process.env.GA_ID ?? ""} />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? ""} />
     </html>
   );
 }
