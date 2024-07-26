@@ -14,12 +14,6 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
-  font-weight: 900;
-}
-
 header{
   background: linear-gradient(180deg, rgba(var(--background-rgb), 1) 0%, rgba(var(--background-rgb), 0) 100%);
 }

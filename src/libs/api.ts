@@ -5,7 +5,7 @@ export const client = createClient({
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
 });
 
-export async function getBlogList() {
+export async function getPortfolioList() {
   const data = await client.get({
     customRequestInit: {
       cache: "no-store",

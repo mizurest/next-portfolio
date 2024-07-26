@@ -5,12 +5,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollDown from "@/components/ScrollDown";
 import WorkCard from "@/components/WorkCard";
-import { getBlogList } from "@/libs/api";
+import { getPortfolioList } from "@/libs/api";
 import ProfileCard from "@/components/ProfileCard";
 
 export default function Home() {
-  const { contents } = use(getBlogList());
-  console.log(contents);
+  const { contents } = use(getPortfolioList());
+  // console.log(contents);
 
   return (
     <main>
