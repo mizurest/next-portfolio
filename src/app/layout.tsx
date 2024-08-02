@@ -5,7 +5,7 @@ import "./../styles/globals.css";
 import { lineSeedJP } from "@/fonts/fonts";
 
 export const metadata: Metadata = {
-  title: "Kosuke Koizumi",
+  title: "imuz!",
   description: "ポートフォリオサイト",
 };
 

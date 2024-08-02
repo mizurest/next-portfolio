@@ -3,7 +3,7 @@ import CircleAvatar from "@/components/CircleAvatar";
 
 const ProfileCard = () => {
   return (
-    <div className="flex flex-col gap-5 items-center bg-white/[.05] p-9 md:p-16 rounded-3xl md:flex-row m-6 md:m-0">
+    <div className="flex flex-col gap-5 items-center bg-white/[.05] p-9 md:p-14 rounded-3xl md:flex-row m-6 md:m-0">
       <CircleAvatar width={80} height={80} />
       <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-2">

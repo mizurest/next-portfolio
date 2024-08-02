@@ -1,20 +1,17 @@
 import Link from "next/link";
 import CircleAvatar from "./CircleAvatar";
+import Image from "next/image";
+import { hexToRgb } from "@/libs/color";
 
 type Props = {
-  themeColor?: string;
+  themeColor: string;
 };
 
 const Header = (props: Props) => {
   const { themeColor } = props;
-  const hexToRgb = (hex: string) => {
-    const r = parseInt(hex.slice(1, 3), 16);
-    const g = parseInt(hex.slice(3, 5), 16);
-    const b = parseInt(hex.slice(5, 7), 16);
-    return `${r}, ${g}, ${b}`;
-  };
 
-  let rgb = "32,32,32";
+
+  let rgb = hexToRgb(themeColor);
 
   if (themeColor) {
     rgb = hexToRgb(themeColor);
@@ -28,10 +25,11 @@ const Header = (props: Props) => {
         background: `linear-gradient(180deg, rgba(${rgb}, 1) 0%, rgba(${rgb}, 0) 100%)`,
       }}
     >
-      <div className="flex items-center gap-2.5">
-        <CircleAvatar width={32} height={32} />
-        <span className="opacity-90">Kosuke Koizumi</span>
-      </div>
+      <Link href="/" className="flex items-center gap-2.5 cursor-pointer">
+        {/* <CircleAvatar width={28} height={28} />
+        <span className="opacity-90 text-sm">Kosuke Koizumi</span> */}
+        <Image src="/logo.svg" alt="logo" width={75} height={50} className="hover:opacity-75"/>
+      </Link>
 
       <div className="hidden lg:flex">
         <Link href="/" className="px-4 h-fit opacity-90 hover:opacity-75 duration-150">
