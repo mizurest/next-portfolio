@@ -1,24 +1,25 @@
 "use client";
 
-import { use } from "react";
+import { use, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
 import { getPortfolioList } from "@/libs/api";
 import { hexToRgb } from "@/libs/color";
-import Head from "next/head";
 
 export default function Home() {
   // URLから記事のidを取得
   const params = useParams();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [params.id]);
+
   // APIから取得する
   const { contents } = use(getPortfolioList());
   const data = contents.find((item: any) => item.id === params.id);
-  // console.log(data);
 
   let rgb = "32,32,32";
   let themeHex = "#202020";
@@ -51,8 +52,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
         <section className="dark:bg-darkgray">
-          <div className="w-1/2 mx-auto py-40 rounded-3xl">
+          <div className="w-1/2 mx-6 lg:mx-auto py-40 rounded-3xl">
             <h4 className="text-lg">詳細</h4>
           </div>
         </section>

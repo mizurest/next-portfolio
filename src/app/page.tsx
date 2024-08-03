@@ -14,13 +14,11 @@ export default function Home() {
 
   return (
     <>
-
-
       <Header themeColor="#202020" />
       <main>
         <Hero />
         <section>
-          <div className="max-w-5xl  mx-6 lg:mx-auto py-36">
+          <div className="max-w-5xl mx-6 lg:mx-auto py-36">
             <div className=" flex justify-between items-baseline">
               <h3 className="text-lg opacity-90">Recent Works</h3>
               <button className="text-sm font-bold text-sky-900">View All</button>

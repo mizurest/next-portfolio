@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className="scroll-smooth font-black dark:bg-darkgray dark:text-white">
+    <html lang="ja" className="font-black dark:bg-darkgray dark:text-white">
       <body className={lineSeedJP.className}>{children}</body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? ""} />
     </html>

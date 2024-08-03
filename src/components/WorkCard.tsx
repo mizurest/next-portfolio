@@ -15,7 +15,7 @@ const WorkCard = (props: Props) => {
   const { title, tags, imageUrl, contentId } = props;
   const [isHover, setIsHover] = useState(false);
   return (
-    <Link href={`/portfolio/${contentId}`} className="cursor-pointer" onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
+    <Link href={`/portfolio/${contentId}`} className="cursor-pointer" onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} scroll={false}>
       <div className="relative bg-neutral-900 h-48 rounded-3xl overflow-hidden">
         <Image src={imageUrl} alt="portfolio thumnail" fill className={`object-cover transition-all ${isHover ? "scale-110 brightness-75" : ""}`} />
       </div>
