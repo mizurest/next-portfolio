@@ -9,29 +9,29 @@ import Footer from "@/components/Footer";
 
 import { getPortfolioList } from "@/libs/api";
 import { hexToRgb } from "@/libs/color";
+import Head from "next/head";
 
 export default function Home() {
   // URLから記事のidを取得
   const params = useParams();
-  console.log(params.id);
 
-  // TODO: idを使ってAPIから記事のデータを取得する
-
+  // APIから取得する
   const { contents } = use(getPortfolioList());
   const data = contents.find((item: any) => item.id === params.id);
-  console.log(data);
+  // console.log(data);
 
   let rgb = "32,32,32";
   let themeHex = "#202020";
 
-  // APIから取得する予定
   if (data.themeColor !== "-") {
-    themeHex = "#" + data.themeColor;
-    rgb = hexToRgb(themeHex);
+    themeHex = data.themeColor;
+    rgb = hexToRgb(data.themeColor);
   }
 
   return (
     <>
+      <title>{`imuz! | ${data.title}`}</title>
+
       <Header themeColor={themeHex} />
       <main style={{ backgroundColor: themeHex }}>
         <section className="relative flex items-center h-screen overflow-hidden">

@@ -10,13 +10,7 @@ type Props = {
 const Header = (props: Props) => {
   const { themeColor } = props;
 
-
   let rgb = hexToRgb(themeColor);
-
-  if (themeColor) {
-    rgb = hexToRgb(themeColor);
-  }
-  
 
   return (
     <header

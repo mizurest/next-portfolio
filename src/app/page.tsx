@@ -6,6 +6,7 @@ import WorkCard from "@/components/WorkCard";
 import { getPortfolioList } from "@/libs/api";
 import ProfileCard from "@/components/ProfileCard";
 import Hero from "@/components/Hero";
+import Head from "next/head";
 
 export default function Home() {
   const { contents } = use(getPortfolioList());
@@ -13,7 +14,9 @@ export default function Home() {
 
   return (
     <>
-      <Header themeColor="#202020"/>
+
+
+      <Header themeColor="#202020" />
       <main>
         <Hero />
         <section>
