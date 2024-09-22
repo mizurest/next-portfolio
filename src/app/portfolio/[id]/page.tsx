@@ -20,6 +20,7 @@ export default function Home() {
   // APIから取得する
   const { contents } = use(getPortfolioList());
   const data = contents.find((item: any) => item.id === params.id);
+  console.log(data)
 
   let rgb = "32,32,32";
   let themeHex = "#202020";
@@ -31,16 +32,16 @@ export default function Home() {
 
   return (
     <>
-      <title>{`imuz! | ${data.title}`}</title>
+      <title>{`${data.title}`}</title>
 
       <Header themeColor={themeHex} />
       <main style={{ backgroundColor: themeHex }}>
         <section className="relative flex items-center h-screen overflow-hidden">
-          <Image src={data.eyecatch.url} fill alt="Tokyo Bay" className="object-cover" />
+          <Image src={data.eyecatch.url} fill alt="eyecatch" className="object-cover" />
           <div
-            className="h-full w-full absolute backdrop-blur-2xl"
+            className="h-full w-full absolute backdrop-blur-md"
             style={{
-              background: `linear-gradient(180deg, rgba(${rgb},1) 0%, rgba(${rgb},0.8) 50%, rgba(${rgb},1) 100%)`,
+              background: `linear-gradient(180deg, rgba(${rgb},1) 0%, rgba(${rgb},0.85) 50%, rgba(${rgb},1) 100%)`,
             }}
           ></div>
           <div className="mx-8 lg:mx-40">
@@ -53,10 +54,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="dark:bg-darkgray">
-          <div className="w-1/2 mx-6 lg:mx-auto py-40 rounded-3xl">
-            <h4 className="text-lg">詳細</h4>
-          </div>
+        <section className="text-sm lg:text-base font-thin leading-10 lg:leading-7">
+          <div className="hoge lg:w-1/2 mx-6 lg:mx-auto py-40" dangerouslySetInnerHTML={{ __html: data.content }}></div>
         </section>
       </main>
       <Footer />

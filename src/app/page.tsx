@@ -21,7 +21,7 @@ export default function Home() {
           <div className="max-w-5xl mx-6 lg:mx-auto py-36">
             <div className=" flex justify-between items-baseline">
               <h3 className="text-lg opacity-90">Recent Works</h3>
-              <button className="text-sm font-bold text-sky-900">View All</button>
+              <button className="text-sm font-bold text-sky-800">View All</button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5 transition-all">
               {contents.slice(0, 6).map((item: Object, i: number) => {

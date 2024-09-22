@@ -10,7 +10,7 @@ const Hero = () => {
         <br />
         I&apos;m a UI designer in Japan.
       </h1>
-      <p className="absolute right-4 bottom-4 font-thin text-xxs lg:text-xs opacity-35">2024.06.08 @Tokyo Bay</p>
+      {/* <p className="absolute right-4 bottom-4 font-thin text-xxs lg:text-xs opacity-35">2024.06.08 @Tokyo Bay</p> */}
       <ScrollDown />
       
     </section>
