@@ -14,9 +14,29 @@
   }
 }
 
-.hoge{
+.portfolio-content{
   h3{
     font-size: 1.125rem;
     font-weight: bold;
+  }
+
+  a{
+    display: flex;
+    justify-content: space-between;
+    color: #ffffffdd;
+    
+    border: 1px solid #ffffffdd;
+    border-radius: 999px;
+    padding: 10px 20px;
+    width: 200px;
+    transition: 0.2s background-color;
+
+    &:after{
+      content : "→"
+    }
+
+    &:hover{
+      background-color: #ffffff24;
+    }
   }
 }

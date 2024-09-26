@@ -20,7 +20,9 @@ export default function Home() {
   // APIから取得する
   const { contents } = use(getPortfolioList());
   const data = contents.find((item: any) => item.id === params.id);
-  console.log(data)
+
+  const date = new Date(data.created);
+  const year = date.getUTCFullYear();
 
   let rgb = "32,32,32";
   let themeHex = "#202020";
@@ -47,7 +49,7 @@ export default function Home() {
           <div className="mx-8 lg:mx-40">
             <h3 className="text-3xl z-10 transition-all opacity-90 lg:text-4xl">{data.title}</h3>
             <div className="font-bold opacity-60 mt-4 flex gap-2 lg:gap-3 text-sm lg:text-base">
-              <span>2023</span>
+              <span>{`${year}`}</span>
               <span>/</span>
               <span>{data.tag}</span>
             </div>
@@ -55,7 +57,7 @@ export default function Home() {
         </section>
 
         <section className="text-sm lg:text-base font-thin leading-10 lg:leading-7">
-          <div className="hoge lg:w-1/2 mx-6 lg:mx-auto py-40" dangerouslySetInnerHTML={{ __html: data.content }}></div>
+          <div className="portfolio-content lg:w-1/2 mx-6 lg:mx-auto py-40" dangerouslySetInnerHTML={{ __html: data.content }}></div>
         </section>
       </main>
       <Footer />

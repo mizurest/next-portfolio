@@ -21,7 +21,7 @@ const WorkCard = (props: Props) => {
       </div>
       <div className="mt-3">
         <h4 className={`opacity-90 transition-all ${isHover ? "brightness-75" : ""}`}>{title}</h4>
-        <p className="font-bold text-xs opacity-50 mt-0.5">{tags}</p>
+        <p className="font-bold text-xs opacity-50">{tags}</p>
       </div>
     </Link>
   );

@@ -8,9 +8,39 @@ import ProfileCard from "@/components/ProfileCard";
 import Hero from "@/components/Hero";
 import Head from "next/head";
 
+interface Eyecatch {
+  url: string;
+  height: number;
+  width: number;
+}
+
+interface Category {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  revisedAt: string;
+  name: string;
+}
+
+interface Item {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  revisedAt: string;
+  eyecatch: Eyecatch;
+  title: string;
+  tag: string;
+  content: string;
+  category: Category | null;
+  themeColor: string;
+  created: string;
+}
+
 export default function Home() {
   const { contents } = use(getPortfolioList());
-  // console.log(contents);
+  contents.sort((a: Item, b: Item) => new Date(b.created).getTime() - new Date(a.created).getTime());
 
   return (
     <>
