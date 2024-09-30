@@ -38,8 +38,8 @@ interface Item {
   created: string;
 }
 
-export default function Home() {
-  const { contents } = use(getPortfolioList());
+export default async function Home() {
+  const { contents } = await getPortfolioList();
   contents.sort((a: Item, b: Item) => new Date(b.created).getTime() - new Date(a.created).getTime());
 
   return (

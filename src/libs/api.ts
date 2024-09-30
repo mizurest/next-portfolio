@@ -8,7 +8,7 @@ export const client = createClient({
 export async function getPortfolioList() {
   const data = await client.get({
     customRequestInit: {
-      cache: "no-store",
+      // cache: "no-store",
     },
     endpoint: "blogs",
   });
