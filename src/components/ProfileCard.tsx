@@ -1,21 +1,35 @@
 import GithubIcon from "../../public/icon/github.svg";
+import ZennIcon from "../../public/icon/zenn.svg";
+import BirthdayIcon from "../../public/icon/birthday.svg";
+import PinIcon from "../../public/icon/pin.svg";
 import CircleAvatar from "@/components/CircleAvatar";
 
 const ProfileCard = () => {
   return (
-    <div className="flex flex-col gap-5 items-center bg-white/[.05] p-9 md:p-14 rounded-3xl md:flex-row m-6 md:m-0">
-      <CircleAvatar width={80} height={80} />
+    <div className="flex flex-col gap-5 items-center border border-white/[.08] p-9 rounded-2xl md:flex-row m-6 md:m-0 ">
+      <CircleAvatar width={72} height={72} />
       <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-2">
-          <div className="text-center opacity-90 md:text-start">Kosuke Koizumi</div>
-          <p className="text-xs lg:text-sm opacity-65 font-bold">
-            FigmaとReactが好きな大学生（休学中）。乗換案内のジョルダン株式会社でUIデザイナー兼コーダーとしてインターン中。主に乗換案内ではなく、鉄道会社や自治体関連の案件に関わることが多い。傍らクラウドワークにも挑戦中。
-          </p>
+          <p className="text-center opacity-90 md:text-start text-base">Kosuke Koizumi</p>
+          <div className="flex gap-4">
+            <div className="flex items-center gap-1.5 text-xs lg:text-sm font-bold">
+              <BirthdayIcon />
+              <span className="opacity-70">2001/06/08</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-xs lg:text-sm font-bold">
+              <PinIcon />
+              <span className="opacity-70">Chigasaki, Kanagawa</span>
+            </div>
+          </div>
         </div>
-        <div className="flex justify-center md:justify-start">
-          <a className="flex items-center gap-1.5 hover:opacity-75" href="https://github.com/mizurest">
+        <div className="flex justify-center md:justify-start gap-2">
+          <a className="flex items-center px-4 py-1.5 rounded-full bg-white/[.06] gap-1.5 hover:opacity-75" href="https://github.com/mizurest">
             <GithubIcon />
             <span className="text-xs">Github</span>
+          </a>
+          <a className="flex items-center px-4 py-1.5 rounded-full bg-white/[.06] gap-1.5 hover:opacity-75" href="https://github.com/mizurest">
+            <ZennIcon />
+            <span className="text-xs">Zenn</span>
           </a>
         </div>
       </div>

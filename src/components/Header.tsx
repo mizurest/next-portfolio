@@ -1,6 +1,5 @@
 import Link from "next/link";
 import CircleAvatar from "./CircleAvatar";
-import Image from "next/image";
 import { hexToRgb } from "@/libs/color";
 
 type Props = {
@@ -19,10 +18,11 @@ const Header = (props: Props) => {
         background: `linear-gradient(180deg, rgba(${rgb}, 1) 0%, rgba(${rgb}, 0) 100%)`,
       }}
     >
-      <Link href="/" className="flex items-center gap-2.5 cursor-pointer">
-        {/* <CircleAvatar width={28} height={28} />
-        <span className="opacity-90 text-sm">Kosuke Koizumi</span> */}
-        <Image src="/logo.svg" alt="logo" width={75} height={50} className="hover:opacity-75"/>
+      <Link href="/" className="flex items-center gap-2.5 cursor-pointer hover:opacity-75 duration-150">
+        <CircleAvatar width={28} height={28} />
+        <span className="opacity-90 text-sm">Kosuke Koizumi</span>
+        {/* <Image src="/logo.svg" alt="logo" width={75} height={50} className="hover:opacity-75"/> */}
+      
       </Link>
 
       <div className="hidden lg:flex">

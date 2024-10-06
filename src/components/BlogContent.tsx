@@ -43,7 +43,7 @@ export default function BlogContent({ data }: BlogContentProps) {
       <title>{`${data.title}`}</title>
 
       <Header themeColor={themeHex} />
-      <main style={{ backgroundColor: themeHex }}>
+      <main style={{  }}>
         <section className="relative flex items-center h-screen overflow-hidden">
           <Image src={data.eyecatch.url} fill alt="eyecatch" className="object-cover" />
           <div

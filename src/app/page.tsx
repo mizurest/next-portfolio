@@ -1,11 +1,11 @@
-import { use } from "react";
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WorkCard from "@/components/WorkCard";
 import { getPortfolioList } from "@/libs/api";
 import ProfileCard from "@/components/ProfileCard";
+import Hashtag from "@/components/Hashtag";
 import Hero from "@/components/Hero";
+import Contact from "@/components/Contact";
 import Head from "next/head";
 
 interface Eyecatch {
@@ -48,10 +48,35 @@ export default async function Home() {
       <main>
         <Hero />
         <section>
-          <div className="max-w-5xl mx-6 lg:mx-auto py-36">
+          <div className="py-32 max-w-5xl mx-auto">
+            <ProfileCard />
+          </div>
+
+          <div className="flex items-center max-w-5xl mx-6 lg:mx-auto py-32 lg:flex-row flex-col lg:gap-14 gap-8">
+            <div className="flex flex-col lg:w-1/2 w-auto">
+              <h3 className="text-xl opacity-90">プロフィール</h3>
+              <p className="font-bold py-2 text-sm text-white/70 ">
+                FigmaとReactが好きな大学生。乗換案内のジョルダン株式会社でUIデザイナー兼コーダーとしてインターン中。主に乗換案内ではなく、鉄道会社や自治体関連の案件に関わることが多い。傍らクラウドワークにも挑戦中。
+              </p>
+            </div>
+            <div className="flex gap-2 lg:w-1/2 w-auto flex-wrap">
+              <Hashtag text="JavaScript" />
+              <Hashtag text="TypeScript" />
+              <Hashtag text="Python" />
+              <Hashtag text="TailwindCSS" />
+              <Hashtag text="Next.js" />
+              <Hashtag text="UIdesign" />
+              <Hashtag text="AfterEffects" />
+              <Hashtag text="Figma" />
+              <Hashtag text="React" />
+              <Hashtag text="Vue" />
+            </div>
+          </div>
+
+          <div className="max-w-5xl mx-6 lg:mx-auto py-32">
             <div className=" flex justify-between items-baseline">
-              <h3 className="text-lg opacity-90">Recent Works</h3>
-              <button className="text-sm font-bold text-sky-800">View All</button>
+              <h3 className="text-xl opacity-90">最近の実績</h3>
+              <button className="text-sm font-bold text-sky-800">すべて見る</button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5 transition-all">
               {contents.slice(0, 6).map((item: Object, i: number) => {
@@ -60,8 +85,8 @@ export default async function Home() {
             </div>
           </div>
 
-          <div className="py-36 max-w-3xl mx-auto">
-            <ProfileCard />
+          <div className="max-w-5xl mx-6 lg:mx-auto py-32">
+            <Contact />
           </div>
         </section>
       </main>
