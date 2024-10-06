@@ -6,7 +6,7 @@ import ProfileCard from "@/components/ProfileCard";
 import Hashtag from "@/components/Hashtag";
 import Hero from "@/components/Hero";
 import Contact from "@/components/Contact";
-import Head from "next/head";
+import Link from "next/link";
 
 interface Eyecatch {
   url: string;
@@ -76,7 +76,9 @@ export default async function Home() {
           <div className="max-w-5xl mx-6 lg:mx-auto py-32">
             <div className=" flex justify-between items-baseline">
               <h3 className="text-xl opacity-90">最近の実績</h3>
-              <button className="text-sm font-bold text-sky-800">すべて見る</button>
+              <Link href="/portfolio" className="text-sm font-bold text-sky-800">
+                すべて見る
+              </Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5 transition-all">
               {contents.slice(0, 6).map((item: Object, i: number) => {

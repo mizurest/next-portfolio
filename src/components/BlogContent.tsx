@@ -19,7 +19,7 @@ interface BlogPost {
 }
 
 interface BlogContentProps {
-  data: BlogPost; // dataの型を指定
+  data: BlogPost;
 }
 
 export default function BlogContent({ data }: BlogContentProps) {
