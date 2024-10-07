@@ -40,3 +40,23 @@
     }
   }
 }
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(24px);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 0.9; 
+    transform: translateY(0);
+  }
+}
+
+.text-animation span {
+  opacity: 0;
+  animation: fadeInUp 0.5s forwards;
+  animation-delay: 0.5s;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}

@@ -25,7 +25,7 @@ const Header = (props: Props) => {
       
       </Link>
 
-      <div className="hidden lg:flex">
+      <div className="font-bold text-sm hidden lg:flex">
         <Link href="/" className="px-4 h-fit opacity-90 hover:opacity-75 duration-150">
           Home
         </Link>

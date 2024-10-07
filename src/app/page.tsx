@@ -50,9 +50,7 @@ export default async function Home() {
         <section>
           <div className="py-32 max-w-5xl mx-auto">
             <ProfileCard />
-          </div>
-
-          <div className="flex items-center max-w-5xl mx-6 lg:mx-auto py-32 lg:flex-row flex-col lg:gap-14 gap-8">
+            <div className="flex items-center max-w-5xl mx-6 lg:mx-auto py-32 lg:flex-row flex-col lg:gap-14 gap-8">
             <div className="flex flex-col lg:w-1/2 w-auto">
               <h3 className="text-xl opacity-90">プロフィール</h3>
               <p className="font-bold py-2 text-sm text-white/70 ">
@@ -72,6 +70,10 @@ export default async function Home() {
               <Hashtag text="Vue" />
             </div>
           </div>
+          </div>
+
+
+          
 
           <div className="max-w-5xl mx-6 lg:mx-auto py-32">
             <div className=" flex justify-between items-baseline">
