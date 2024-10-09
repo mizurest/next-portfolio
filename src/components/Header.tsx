@@ -1,6 +1,9 @@
+'use client'
+
 import Link from "next/link";
 import CircleAvatar from "./CircleAvatar";
 import { hexToRgb } from "@/libs/color";
+import { useEffect, useState } from "react";
 
 type Props = {
   themeColor: string;
@@ -8,6 +11,23 @@ type Props = {
 
 const Header = (props: Props) => {
   const { themeColor } = props;
+  const [heroHeader, setHeroHeader] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= window.innerHeight - 90) {
+        setHeroHeader(false);
+      } else {
+        setHeroHeader(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   let rgb = hexToRgb(themeColor);
 
@@ -15,7 +35,9 @@ const Header = (props: Props) => {
     <header
       className="flex items-center justify-between px-6 lg:px-14 fixed z-20 w-screen h-24"
       style={{
-        background: `linear-gradient(180deg, rgba(${rgb}, 1) 0%, rgba(${rgb}, 0) 100%)`,
+        background: heroHeader
+        ? `linear-gradient(180deg, rgba(${rgb}, 1) 0%, rgba(${rgb}, 0) 100%)`
+        : `linear-gradient(180deg, rgba(32,32,32, 1) 0%, rgba(32,32,32, 0) 100%)`,
       }}
     >
       <Link href="/" className="flex items-center gap-2.5 cursor-pointer hover:opacity-75 duration-150">
