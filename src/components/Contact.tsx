@@ -1,7 +1,7 @@
 const Contact = () => {
   return (
     <>
-      <h3 className="text-xl opacity-90">お問い合わせ</h3>
+      <h3 className="text-xl opacity-90">Contact</h3>
       <p className="font-bold py-2 text-sm text-white/75">
         下記のメールアドレス、またはUIデザインの依頼は
         <a href="https://coconala.com/services/2969064" target="_blank" className="text-sky-800">
